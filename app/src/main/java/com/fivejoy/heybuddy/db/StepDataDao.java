@@ -21,14 +21,14 @@ public class StepDataDao {
     private DBOpenHelper stepHelper;
     private SQLiteDatabase stepDb;
 
-    public StepDataDao(Context context) {
+    public StepDataDao(Context context)
+    {
         stepHelper = new DBOpenHelper(context);
     }
 
     /**
      * 添加一条新记录
      *
-     * @param stepEntity
      */
     public void addNewData(StepEntity stepEntity) {
         stepDb = stepHelper.getReadableDatabase();
@@ -43,9 +43,6 @@ public class StepDataDao {
 
     /**
      * 根据日期查询记录
-     *
-     * @param curDate
-     * @return
      */
     public StepEntity getCurDataByDate(String curDate) {
         stepDb = stepHelper.getReadableDatabase();
@@ -91,7 +88,6 @@ public class StepDataDao {
 
     /**
      * 更新数据
-     * @param stepEntity
      */
     public void updateCurData(StepEntity stepEntity) {
         stepDb = stepHelper.getReadableDatabase();
