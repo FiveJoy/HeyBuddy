@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/food_list_selector"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <!--  ListView最左边的缩略图 -->
+    <LinearLayout android:id="@+id/foodLinear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true">
+
+
+        <ImageView
+            android:id="@+id/food_image"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:src="@drawable/zhuce"/>
+
+    </LinearLayout>
+
+    <!-- 食物名称-->
+    <TextView
+        android:id="@+id/food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/foodLinear"
+        android:layout_toRightOf="@+id/foodLinear"
+        android:text="Rihanna Love the way lie"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="15dip"
+        android:textStyle="bold"/>
+
+    <!-- 100g -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:textColor="#343434"
+        android:textSize="15dip"
+        android:layout_marginTop="1dip"
+        android:text="100g" />
+
+    <!--千卡数目 -->
+    <TextView
+        android:id="@+id/food_calorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:layout_alignBottom="@+id/foodLinear"
+        android:layout_toRightOf="@+id/foodLinear"
+        android:textSize="10dip"
+        android:textColor="#10bcc9"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_toRightOf="@+id/food_calorie"
+        android:text="千卡"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+</RelativeLayout>

@@ -261,12 +261,12 @@ public class StepService extends Service implements SensorEventListener {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
-                case Constant.MSG_FROM_CLIENT:
+                case MyApplication.MSG_FROM_CLIENT:
                     try {
                         //得到客户端信使
                         Messenger client_messenger = msg.replyTo;
                         //创建消息，使用obtain可以从pool得到message避免重复创建
-                        Message replyMsg = Message.obtain(null, Constant.MSG_FROM_SERVER);
+                        Message replyMsg = Message.obtain(null, MyApplication.MSG_FROM_SERVER);
 
                         Bundle bundle = new Bundle();
                         bundle.putInt("steps", CURRENT_STEP);

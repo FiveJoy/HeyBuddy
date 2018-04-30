@@ -11,20 +11,16 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.fivejoy.heybuddy.MyApplication;
 import com.fivejoy.heybuddy.R;
 import com.fivejoy.heybuddy.db.StepDataDao;
-import com.fivejoy.heybuddy.stepcounter.Constant;
 import com.fivejoy.heybuddy.stepcounter.StepCountCheckUtil;
 import com.fivejoy.heybuddy.stepcounter.StepEntity;
 import com.fivejoy.heybuddy.stepcounter.StepService;
@@ -46,7 +42,7 @@ import butterknife.Unbinder;
  */
 
 public class FragmentSports extends MyBaseFragment  implements android.os.Handler.Callback{
-    private static final String TAG=MyApplication.fivejoy+"FragmentSports";
+    private static final String TAG= MyApplication.fivejoy+"FragmentSports";
 
     private Unbinder unbinder;
     View parentView;
@@ -207,7 +203,7 @@ public class FragmentSports extends MyBaseFragment  implements android.os.Handle
         {
             switch (msg.what) {
                 //这里用来获取到Service发来的数据
-                case Constant.MSG_FROM_SERVER:
+                case MyApplication.MSG_FROM_SERVER:
 
                     //如果是今天则更新数据
                     if (curSelDate.equals(TimeUtils.getCurrentDate())) {
@@ -256,7 +252,7 @@ public class FragmentSports extends MyBaseFragment  implements android.os.Handle
                 public void run() {
                     try {
                         messenger = new Messenger(service);
-                        Message msg = Message.obtain(null, Constant.MSG_FROM_CLIENT);
+                        Message msg = Message.obtain(null, MyApplication.MSG_FROM_CLIENT);
                         msg.replyTo = mGetReplyMessenger;
                         messenger.send(msg);
                     } catch (RemoteException e) {
